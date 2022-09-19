@@ -35,7 +35,7 @@ SELECT create_hypertable('rides', 'started_at');
 
 ```
 
-After that, we want to make sure our sample data, rides-cleaned.csv.zip is unzipped and stored in our working directory. From the Timescale command line, we can copy the csv into our rides table (this may take a minute or so depending on network connectivity):
+After that, we want to make sure our sample data, rides-cleaned.csv.zip is unzipped and stored in our working directory. From the Timescale command line, we can copy the csv into our `rides` table (this may take a minute or so depending on network connectivity):
 
 
 ```
@@ -93,6 +93,8 @@ head(rides)
 5        casual     1975
 6        member      446
 ```
+
+## Visualizing Distributions
 
 Next, let's look at the distribution of bicycle types (docked vs. electric vs. classic)
 
