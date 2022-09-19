@@ -61,7 +61,7 @@ conn <- dbConnect(drv = RPostgres::Postgres(),
                   port = "<YOUR_TIMESCALE_PORT>")
 
 ```
-Next, let's pass a query to the rides table in Timescale Cloud that selects all columns where the ride duration is equal to or less than an hour but greater than 0. We assign that data to an object called `rides`
+Next, let's pass a query to the rides table in Timescale Cloud that selects all observations where the ride duration is equal to or less than an hour but greater than 0. We assign that data to an object called `rides`
 
 ```
 rides <- dbGetQuery(conn, paste0("SELECT * FROM rides WHERE duration <= 3600 AND duration > 0;"))
