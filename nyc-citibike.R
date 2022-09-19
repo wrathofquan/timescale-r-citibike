@@ -42,10 +42,11 @@ p2 <- rides %>% filter(duration < 3600 & duration > 0) %>%
 # community district shape file
 # https://data.cityofnewyork.us/City-Government/Community-Districts/yfnk-k7r4
 
+
 nyc <- read_sf("https://data.cityofnewyork.us/api/geospatial/yfnk-k7r4?method=export&format=GeoJSON")
 nyc <- st_simplify(nyc)
 
-ggplot(nyc) + geom_sf()
+nyc_map <- ggplot(nyc) + geom_sf()
 
 
 # filter out data points that are less than 2 hours and greater than 0.
@@ -56,14 +57,14 @@ start_coordinates <- rides %>%
 
 # overlay points on shapefile
 
-ggplot(nyc) + geom_sf(size = 0.25) +
+p3 <- ggplot(nyc) + geom_sf(size = 0.25) +
   geom_point(data = start_coordinates, 
-             aes(x= start_lng, y= start_lat, alpha = 1/10))
+             aes(x= start_lng, y= start_lat, alpha = 0.1))
 
 
 # add 2d contour for overplotting
 
-p3 <- ggplot() + 
+p4 <- ggplot() + 
   geom_sf(size = 0.25, data = nyc) +
   geom_jitter(aes(x= start_lng, y= start_lat), 
               size = 0.5, alpha = 0.025, shape = 3, 
@@ -72,7 +73,5 @@ p3 <- ggplot() +
                  geom = "polygon", contour_var = "count",
                  data = start_coordinates) +
   scale_fill_gradient(low = "blue", high = "red") +
-  theme(axis.ticks = element_blank(), axis.text = element_blank(), legend.position="none")
-
-
-
+  theme(axis.ticks = element_blank(), axis.text = element_blank(), legend.position="none") +
+  ggtitle("NYC Citibike Rides Origin, March 2022")
