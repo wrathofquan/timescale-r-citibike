@@ -45,7 +45,7 @@ If this is successful we should see the message `COPY 378304`
 
 ## Creating a connection in R/RStudio
 
-In our R environment, we first want to load our R libraries we downloaded earlier and setup the connection to Timescale Cloud. You'll need to fill in your own Timescale credentials. If you can't find this information please feel free to reach out to [Timescale Support](https://www.timescale.com/support/) for help. 
+In our R environment, we first want to load our R libraries we downloaded earlier and setup the connection to Timescale Cloud. You'll need to fill in your own Timescale credentials in the `dbConnect` function. If you can't find this information please feel free to reach out to [Timescale Support](https://www.timescale.com/support/) for help. 
 
 ```
 library(RPostgres)
