@@ -149,7 +149,7 @@ ggplot(nyc) + geom_sf(size = 0.25) +
 ```
 ![](https://github.com/wrathofquan/timescale-r-citibike/blob/main/images/nyc-points.png)
 
-Not bad but there is clearly an overplotting problem. We can try to do better with by playing around with ggplot's [geoms](https://ggplot2.tidyverse.org/reference/) to overlay density plots to show where more rides are originating.
+Not bad but there is clearly an overplotting problem. We can try to do better by experimenting with ggplot's [geoms](https://ggplot2.tidyverse.org/reference/) to overlay density plots to show where more rides are originating.
 
 ```
 ggplot() + 
