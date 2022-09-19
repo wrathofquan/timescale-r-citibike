@@ -40,9 +40,8 @@ After that, we want to make sure our sample data, rides-cleaned.csv.zip is unzip
 
 ```
  \COPY rides from 'rides_cleaned.csv' DELIMITER ',' CSV HEADER;
-
 ```
-If this is successful we should see a message indicating the data was copied over ` COPY 378304`
+If this is successful we should see the message `COPY 378304`
 
 ## Creating a connection in R/RStudio
 
