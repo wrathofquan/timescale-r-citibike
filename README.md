@@ -114,7 +114,7 @@ rides %>%
 Looking at the distribution of ride duration
 
 ```
-rides  %>% 
+rides %>% 
   ggplot(aes(x = duration)) + 
   geom_histogram(binwidth = 300)
 ```
