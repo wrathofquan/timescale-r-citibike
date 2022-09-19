@@ -112,7 +112,7 @@ rides %>%
 
 ![](https://github.com/wrathofquan/timescale-r-citibike/blob/main/images/rideable-type.png)
 
-We may want to look at distribution of ride duration
+Looking at the distribution of ride duration
 
 ```
 rides  %>% 
